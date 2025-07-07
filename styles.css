@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: whitesmoke;
+    color: #fff;
+    margin: 0;
+}
+
+.music-app-container {
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #1DB954; 
+    margin-bottom: 20px;
+}
+
+.playlist-slider {
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #333;
+    min-height: 300px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlist-info h2 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.song-display {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+    width: 100%;
+    justify-content: center;
+}
+
+#album-art {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.song-details {
+    text-align: left;
+}
+
+.song-details h3 {
+    margin: 0 0 5px 0;
+    color: #fff;
+}
+
+.song-details p {
+    margin: 0;
+    color: #b3b3b3;
+    font-size: 0.9em;
+}
+
+.controls button {
+    background-color: #1DB954;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #1ED760;
+}
