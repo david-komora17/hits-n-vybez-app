@@ -29,9 +29,21 @@ document.addEventListener('DOMContentLoaded', getQuote);
 const loginForm = document.getElementById('login-form');
 const loginMessageDiv = document.getElementById('login-message');
 
-
 // Simplified "user database"
 const VALID_CREDENTIALS = {
     "JohnDoe12345password123john.doe@example.com": true,
     "JaneSmith67890securepassjane.smith@example.com": true
 };
+// Note: This concatenates all fields into a single key. Extremely basic.
+
+// Function to display messages
+function displayMessage(message, type) {
+    loginMessageDiv.textContent = message;
+    loginMessageDiv.className = `login-message ${type}`;
+    loginMessageDiv.style.display = 'block';
+
+    setTimeout(() => {
+        loginMessageDiv.style.display = 'none';
+        loginMessageDiv.textContent = '';
+    }, 5000);
+}
