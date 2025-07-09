@@ -47,3 +47,35 @@ function displayMessage(message, type) {
         loginMessageDiv.textContent = '';
     }, 5000);
 }
+
+// Handle form submission
+loginForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    // Access input values directly from the form's elements property
+    const { firstName, secondName, idNumber, password, email } = event.target.elements;
+
+    const inputFirstName = firstName.value.trim();
+    const inputSecondName = secondName.value.trim();
+    const inputIdNumber = idNumber.value.trim();
+    const inputPassword = password.value.trim();
+    const inputEmail = email.value.trim();
+
+    // Check if any required field is empty
+    if (!inputFirstName || !inputSecondName || !inputIdNumber || !inputPassword || !inputEmail) {
+        displayMessage("Please fill in all fields.", "error");
+        return;
+    }
+
+    // Create a unique key from the input values
+    const inputKey = `${inputFirstName}${inputSecondName}${inputIdNumber}${inputPassword}${inputEmail}`;
+
+    if (VALID_CREDENTIALS[inputKey]) {
+        displayMessage("Login successful! Redirecting...", "success");
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1500);
+    } else {
+        displayMessage("Invalid credentials. Please try again.", "error");
+    }
+});
