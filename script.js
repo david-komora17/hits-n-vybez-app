@@ -78,11 +78,7 @@ const nextBtn = document.getElementById('next-btn');
 let currentPlaylistIndex = 0;
 let currentSongIndex = 0;
 
-// --- Functions ---
 
-/**
- * Renders the current playlist and song details to the DOM.
- */
 function renderCurrentContent() {
     const currentPlaylist = playlists[currentPlaylistIndex];
     const currentSong = currentPlaylist.songs[currentSongIndex];
@@ -95,36 +91,27 @@ function renderCurrentContent() {
     albumArtElem.alt = `${currentSong.title} album art`;
 }
 
-/**
- * Moves to the next song or playlist.
- * If at the end of a playlist, moves to the next playlist's first song.
- * If at the end of all playlists, loops back to the beginning.
- */
 function goToNext() {
     currentSongIndex++;
     if (currentSongIndex >= playlists[currentPlaylistIndex].songs.length) {
-        currentSongIndex = 0; // Reset song index
-        currentPlaylistIndex++; // Move to next playlist
+        currentSongIndex = 0;
+        currentPlaylistIndex++; 
         if (currentPlaylistIndex >= playlists.length) {
-            currentPlaylistIndex = 0; // Loop back to the first playlist
+            currentPlaylistIndex = 0; 
         }
     }
     renderCurrentContent();
 }
 
-/*
- * Moves to the previous song or playlist.
- * If at the beginning of a playlist, moves to the previous playlist's last song.
- * If at the beginning of all playlists, loops back to the end.
-*/
+
 function goToPrevious() {
     currentSongIndex--;
     if (currentSongIndex < 0) {
-        currentPlaylistIndex--; // Move to previous playlist
+        currentPlaylistIndex--; 
         if (currentPlaylistIndex < 0) {
-            currentPlaylistIndex = playlists.length - 1; // Loop back to the last playlist
+            currentPlaylistIndex = playlists.length - 1; 
         }
-        currentSongIndex = playlists[currentPlaylistIndex].songs.length - 1; // Set to last song of previous playlist
+        currentSongIndex = playlists[currentPlaylistIndex].songs.length - 1; 
     }
     renderCurrentContent();
 }
