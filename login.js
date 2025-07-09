@@ -28,3 +28,10 @@ document.addEventListener('DOMContentLoaded', getQuote);
 
 const loginForm = document.getElementById('login-form');
 const loginMessageDiv = document.getElementById('login-message');
+
+
+// Simplified "user database"
+const VALID_CREDENTIALS = {
+    "JohnDoe12345password123john.doe@example.com": true,
+    "JaneSmith67890securepassjane.smith@example.com": true
+};
